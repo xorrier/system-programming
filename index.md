@@ -7,13 +7,17 @@ hero:
   tagline: From competitive programming to professional system-level C++ — RAII, file I/O, memory, OS APIs, concurrency, and Windows internals.
   actions:
     - theme: brand
-      text: Start with Phase 0 →
-      link: /00-cpp-core-gaps/
+      text: Start with C++ Basics →
+      link: /cpp-basics/
     - theme: alt
       text: View on GitHub
       link: https://github.com/YOUR_USERNAME/system-programming
 
 features:
+  - icon: 🧱
+    title: C++ Basics & OOP
+    details: Classes, objects, constructors, Rule of Five, inheritance, polymorphism, and the std:: standard library.
+    link: /cpp-basics/
   - icon: 🔒
     title: Phase 0 — C++ Core Gaps
     details: RAII, move semantics, smart pointers, casting, undefined behavior, and struct layout.

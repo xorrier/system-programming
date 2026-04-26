@@ -17,6 +17,26 @@ export default defineConfig({
 
     sidebar: [
       {
+        text: "C++ Basics & OOP",
+        collapsed: false,
+        items: [
+          { text: "Overview", link: "/cpp-basics/" },
+          { text: "Classes & Objects", link: "/cpp-basics/01-classes-objects" },
+          {
+            text: "Constructors & Rule of Five",
+            link: "/cpp-basics/02-constructors-destructors",
+          },
+          {
+            text: "Inheritance & Polymorphism",
+            link: "/cpp-basics/03-inheritance-polymorphism",
+          },
+          {
+            text: "std:: & Standard Library",
+            link: "/cpp-basics/04-std-library",
+          },
+        ],
+      },
+      {
         text: "Phase 0 — C++ Core Gaps",
         collapsed: false,
         items: [
