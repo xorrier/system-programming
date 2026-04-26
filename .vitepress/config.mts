@@ -9,6 +9,9 @@ export default defineConfig({
   // e.g. if your repo is github.com/yourname/system-programming, set base: '/system-programming/'
   base: "/system-programming/",
 
+  // Stub pages don't have .md files yet — ignore dead links during build
+  ignoreDeadLinks: true,
+
   themeConfig: {
     nav: [{ text: "Home", link: "/" }],
 
