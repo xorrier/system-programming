@@ -11,7 +11,7 @@ hero:
       link: /cpp-basics/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/YOUR_USERNAME/system-programming
+      link: https://github.com/xorrier/system-programming
 
 features:
   - icon: 🧱

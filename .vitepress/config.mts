@@ -154,15 +154,14 @@ export default defineConfig({
 
     // Edit links — update to your actual GitHub repo
     editLink: {
-      pattern:
-        "https://github.com/YOUR_USERNAME/system-programming/edit/main/:path",
+      pattern: "https://github.com/xorrier/system-programming/edit/main/:path",
       text: "Edit this page on GitHub",
     },
 
     socialLinks: [
       {
         icon: "github",
-        link: "https://github.com/YOUR_USERNAME/system-programming",
+        link: "https://github.com/xorrier/system-programming",
       },
     ],
 
