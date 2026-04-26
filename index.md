@@ -16,7 +16,7 @@ hero:
 features:
   - icon: 🧱
     title: C++ Basics & OOP
-    details: Classes, objects, constructors, Rule of Five, inheritance, polymorphism, and the std:: standard library.
+    details: "Classes, objects, constructors, Rule of Five, inheritance, polymorphism, and the std:: standard library."
     link: /cpp-basics/
   - icon: 🔒
     title: Phase 0 — C++ Core Gaps
@@ -36,7 +36,7 @@ features:
     link: /03-os-apis/
   - icon: 🧵
     title: Phase 4 — Concurrency
-    details: std::thread, atomics, Win32 sync primitives, and thread patterns.
+    details: "std::thread, atomics, Win32 sync primitives, and thread patterns."
     link: /04-concurrency/
   - icon: 🏢
     title: Phase 5 — Windows Internals
