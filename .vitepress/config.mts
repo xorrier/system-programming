@@ -19,7 +19,6 @@ export default defineConfig({
     ],
 
     sidebar: [
-      { text: "⚙ Playground", link: "/playground" },
       {
         text: "C++ Basics & OOP",
         collapsed: false,
