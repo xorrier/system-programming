@@ -13,9 +13,13 @@ export default defineConfig({
   ignoreDeadLinks: true,
 
   themeConfig: {
-    nav: [{ text: "Home", link: "/" }],
+    nav: [
+      { text: "Home", link: "/" },
+      { text: "⚙ Playground", link: "/playground" },
+    ],
 
     sidebar: [
+      { text: "⚙ Playground", link: "/playground" },
       {
         text: "C++ Basics & OOP",
         collapsed: false,
