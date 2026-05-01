@@ -28,7 +28,7 @@ Traditional I/O:         Memory-Mapped I/O:
 
 | Aspect | `read()`/`fread()` | Memory Mapping |
 |--------|--------------------|----------------|
-| Data copies | 2 copies (kernel→user) | 0 extra copies |
+| Data copies | 1 copy (kernel→user) | 0 extra copies |
 | System calls | One per `read()` | Only initial setup |
 | Random access | Must `seek()` + `read()` | Pointer arithmetic: `data[offset]` |
 | Large files | Must manage chunking | OS pages in/out automatically |

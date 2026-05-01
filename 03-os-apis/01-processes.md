@@ -284,7 +284,7 @@ private:
 - ✅ POSIX: `fork()` (clone) + `exec()` (replace)
 - ✅ Always close process and thread handles on Windows
 - ✅ `CreateToolhelp32Snapshot` to enumerate running processes
-- ❌ Don't forget `WaitForSingleObject` — zombie processes on Windows waste handles
+- ❌ Don't forget `WaitForSingleObject` + `CloseHandle` — leaked process handles waste kernel resources
 - ❌ Don't forget `waitpid` — zombie processes on Linux waste PIDs
 
 ---

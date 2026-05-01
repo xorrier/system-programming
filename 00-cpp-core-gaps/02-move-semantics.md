@@ -12,7 +12,7 @@ In system programming you handle large buffers — patch files that can be **gig
 std::vector<char> readFile(const char* path) {
     std::vector<char> data(1024 * 1024 * 500); // 500 MB buffer
     // ... fill data ...
-    return data;  // ❌ Without move semantics: copies 500 MB!
+    return data;  // ❌ Without move semantics (and no NRVO): could copy 500 MB!
 }
 ```
 
@@ -54,7 +54,7 @@ int&& rref = 10;        // rvalue reference — binds to rvalue (temporary)
 ### `const lvalue&` — The "Universal Parameter" (Old Way)
 
 ```cpp
-// Takes both lvalues and rvalues, but forces a copy
+// Takes both lvalues and rvalues, but can't steal/move from it
 void process(const std::vector<char>& data);  
 ```
 
@@ -233,10 +233,10 @@ private:
 const std::vector<char> data = loadPatch();
 auto copy = std::move(data);  // Still copies! Can't move from const.
 
-// ❌ Using moved-from object (undefined behavior if not a well-defined state)
+// ⚠️ Using moved-from object — valid but unspecified state for STL types
 auto data = loadPatch();
 process(std::move(data));
-data.size();  // ⚠️ UB risk — don't use after move
+data.size();  // Legal, but value is unspecified (likely 0). Avoid relying on it.
 
 // ❌ Returning with std::move — kills NRVO
 std::vector<char> bad() {

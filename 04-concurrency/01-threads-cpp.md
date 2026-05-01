@@ -86,11 +86,14 @@ void process(int id, const std::string& name) {
 // Arguments are COPIED by default
 std::thread t1(process, 1, "Alice");
 
-// Use std::ref to pass by reference
+// Use std::ref to pass by reference (needed for std::thread argument forwarding)
 int counter = 0;
 std::thread t2([](int& c) { c++; }, std::ref(counter));
 t2.join();
 // counter is now 1
+
+// Simpler alternative: capture by reference in the lambda
+// std::thread t3([&counter]() { counter++; });
 ```
 
 ---

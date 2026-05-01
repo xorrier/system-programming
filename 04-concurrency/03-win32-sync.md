@@ -290,7 +290,7 @@ DWORD WINAPI consumer(LPVOID) {
 
 | Win32 | C++ Standard | Notes |
 |-------|-------------|-------|
-| `CRITICAL_SECTION` | `std::mutex` | CS is non-recursive by default |
+| `CRITICAL_SECTION` | `std::mutex` | CS is recursive; `std::mutex` is not |
 | `SRWLOCK` | `std::shared_mutex` (C++17) | SRWLOCK is lighter |
 | `CreateEvent` | `std::condition_variable` | Events are kernel objects (cross-process) |
 | `CreateSemaphore` | `std::counting_semaphore` (C++20) | |

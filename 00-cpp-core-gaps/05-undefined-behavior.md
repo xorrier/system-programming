@@ -129,7 +129,7 @@ const int MAX_RETRIES = 3;          // Can't change after init
 const char* CONFIG_PATH = "/etc";   // Pointer itself can change, data can't
 
 // ✅ Use const for all values that shouldn't change
-void connect(const std::string& host, const int port);
+void connect(const std::string& host, int port);
 ```
 
 ### `const` Pointers — Two Positions
@@ -223,11 +223,11 @@ while (!(*STATUS_REG & 0x01)) {
     //                   and cache it forever!
 }
 
-// 2. Signal handler communication
-volatile bool g_shutdown = false;
+// 2. Signal handler communication (must use sig_atomic_t, not bool)
+volatile std::sig_atomic_t g_shutdown = 0;
 
 void signalHandler(int sig) {
-    g_shutdown = true;  // Called from signal handler context
+    g_shutdown = 1;  // Called from signal handler context
 }
 
 while (!g_shutdown) {

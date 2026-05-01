@@ -52,6 +52,8 @@ DWORD WINAPI workerThread(LPVOID param) {
 void createThreadExample() {
     int threadId = 1;
 
+    // Safe to pass &threadId here because we WaitForSingleObject below,
+    // keeping threadId alive for the thread's lifetime. See "Common Pitfalls" for the danger.
     HANDLE hThread = CreateThread(
         nullptr,           // Default security
         0,                 // Default stack size
